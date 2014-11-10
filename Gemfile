@@ -3,7 +3,6 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.8'
-gem 'sqlite3'
 gem 'sprockets', '2.11.0'
 gem 'sass-rails', '4.0.3'
 gem 'bcrypt-ruby', '3.1.2'
@@ -20,6 +19,7 @@ gem 'country_select'
 gem 'carrierwave'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails', '2.13.1'
   gem 'guard-rspec', '2.5.0'
 end
@@ -35,4 +35,5 @@ end
 
 group :production do
   gem 'rails_12factor', '0.0.2'
+  gem 'pg'
 end
