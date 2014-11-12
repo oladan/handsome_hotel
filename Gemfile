@@ -13,7 +13,6 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'devise'
-gem 'haml-rails'
 gem 'simple_form'
 gem 'country_select'
 gem 'carrierwave'
@@ -21,6 +20,7 @@ gem 'carrierwave'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.13.1'
+  gem 'guard'
   gem 'guard-rspec', '2.5.0'
 end
 
