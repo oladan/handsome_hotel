@@ -20,8 +20,8 @@ gem 'carrierwave'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.13.1'
-  gem 'guard'
   gem 'guard-rspec', '2.5.0'
+  gem 'guard', '2.7.3'
 end
 
 group :test do
