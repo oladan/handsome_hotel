@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe HotelsController do
+  before do
+    @user = FactoryGirl.create :user
+    sign_in @user
+  end
 
   describe "GET 'new'" do
     it "returns http success" do

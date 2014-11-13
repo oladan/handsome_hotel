@@ -43,4 +43,5 @@ RSpec.configure do |config|
 
   # Devise inclusion
   config.include Devise::TestHelpers, type: :controller
+  config.include(FactoryGirl::Syntax::Methods)
 end
