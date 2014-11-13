@@ -1,7 +1,9 @@
 <h1><%= @hotel.title %></h1>
  
 <p>
-  <%= @hotel.description %>
+  <%= @hotel.description %><br>
+  <b>Breakfast:</b> <%= @hotel.breakfast ? 'Yes' : 'No' %><br>
+  <b>Price:</b> $<%= @hotel.price %>
 </p>
  
 <%= link_to 'All hotels', hotels_path %>
