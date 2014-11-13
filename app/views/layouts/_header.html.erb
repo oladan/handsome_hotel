@@ -4,10 +4,11 @@
       <%= link_to "Handsome Hotel", '#', id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "All hotels", '#' %></li>
+          <li><%= link_to "All hotels", root_path %></li>
+          <li><%= link_to "New hotel", new_hotel_path %></li>
           <li><%= link_to "Help", help_path %></li>
           <% if user_signed_in? %>
-            <li><%= link_to "Edit my profile: " + current_user.email , edit_user_registration_path %></li>
+            <li><%= link_to current_user.email , edit_user_registration_path %></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>

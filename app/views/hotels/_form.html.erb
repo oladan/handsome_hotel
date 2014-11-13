@@ -1,0 +1,44 @@
+<%= form_for Hotel.new do |f| %>
+  <% if @hotel.errors.any? %>
+    
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Please fix: <%= pluralize(@hotel.errors.count, "error") %></h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <% @hotel.errors.full_messages.each do |msg| %>
+            <li>
+            <%= msg %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+  <% end %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control input-sm' %>
+  </p>
+
+  <p>
+  <%= f.label :breakfast %>
+    <%= f.text_field :breakfast, class: 'form-control input-sm'  %>
+  </p>
+
+  <p>
+    <%= f.label :price %>
+    <%= f.text_field :price, class: 'form-control input-sm'  %>
+  </p>
+
+  <p>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= link_to "Cancel", hotels_path, class: 'btn btn-default'  %> 
+    <%= f.submit 'Submit', :class => 'btn btn-success' %>
+  </p>
+<% end %>
