@@ -4,7 +4,7 @@
   <%= image_tag(@hotel.photo_url(:thumb), class: "img-rounded pull-left", style: "margin-right: 20px") %>
   <%= @hotel.description %><br>
   <b>Breakfast:</b> <%= @hotel.breakfast ? 'Yes' : 'No' %><br>
-  <b>Price:</b> $<%= @hotel.price %><br>
+  <b>Price:</b> <%= number_to_currency(@hotel.price, :precision => 2) %><br>
   <b>Author:</b> <%= @hotel.user.email %>
 </p>
  
