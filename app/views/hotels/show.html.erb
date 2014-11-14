@@ -1,6 +1,7 @@
 <h1><%= @hotel.title %></h1>
  
 <p>
+  <%= image_tag(@hotel.photo_url(:thumb), class: "img-rounded pull-left", style: "margin-right: 20px") %>
   <%= @hotel.description %><br>
   <b>Breakfast:</b> <%= @hotel.breakfast ? 'Yes' : 'No' %><br>
   <b>Price:</b> $<%= @hotel.price %><br>

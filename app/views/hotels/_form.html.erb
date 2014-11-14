@@ -38,6 +38,11 @@
   </p>
 
   <p>
+    <%= f.label :photo %>
+    <%= f.file_field :photo, class: 'form-control' %>
+  </p>
+
+  <p>
     <%= link_to "Cancel", hotels_path, class: 'btn btn-default'  %> 
     <%= f.submit 'Submit', :class => 'btn btn-success' %>
   </p>

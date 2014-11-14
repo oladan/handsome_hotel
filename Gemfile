@@ -16,6 +16,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'country_select'
 gem 'carrierwave'
+gem 'mini_magick', '3.8.0'
 
 group :development, :test do
   gem 'sqlite3'
