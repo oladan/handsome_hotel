@@ -1,9 +1,9 @@
-<h1>All hotels</h1>
+<h1>Hotels rating</h1>
 
 <% @hotels.each do |hotel| %>
-  <h4><%= link_to hotel.title, hotel %></h4>
+  <h3><%= link_to hotel.title, hotel %></h3>
   <p>
-    <%= image_tag(hotel.photo_url(:thumb), class: "img-rounded pull-left", style: "margin-right: 20px") %>
+    <%= image_tag(hotel.photo_url(:thumb), class: "img-rounded pull-left", style: "margin-right: 15px") %>
     <%= hotel.description %><br>
     <b>Breakfast:</b> <%= hotel.breakfast ? 'Yes' : 'No' %><br>
     <b>Price:</b> <%= number_to_currency(hotel.price, :precision => 2) %><br>
