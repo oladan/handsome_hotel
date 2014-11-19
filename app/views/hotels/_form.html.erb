@@ -42,8 +42,17 @@
     <%= f.file_field :photo, class: 'form-control' %>
   </p>
 
+  <% f.fields_for :location do |builder| %>
+    <p>
+      <%= builder.label :address %>
+      <%= builder.text_field :address, class: 'form-control' %>
+    </p>
+  <% end %>  
+
   <p>
     <%= link_to "Cancel", hotels_path, class: 'btn btn-default'  %> 
     <%= f.submit 'Submit', :class => 'btn btn-success' %>
   </p>
+
+
 <% end %>

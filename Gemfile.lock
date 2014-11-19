@@ -80,6 +80,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.9.6)
     formatador (0.2.5)
+    geocoder (1.2.6)
     guard (2.7.3)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -224,6 +225,7 @@ DEPENDENCIES
   database_cleaner!
   devise
   factory_girl_rails (= 4.2.0)
+  geocoder
   guard (= 2.7.3)
   guard-rspec (= 2.5.0)
   jbuilder (= 1.0.2)

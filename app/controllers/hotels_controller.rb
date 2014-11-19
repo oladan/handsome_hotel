@@ -1,6 +1,7 @@
 class HotelsController < ApplicationController
   def new
     @hotel = Hotel.new
+    2.times { @hotel.location.build }
   end
 
   def create
