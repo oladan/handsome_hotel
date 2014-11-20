@@ -1,6 +1,6 @@
-<%= form_for Hotel.new do |f| %>
+<%= form_for @hotel do |f| %>
+  
   <% if @hotel.errors.any? %>
-    
     <div class="panel panel-primary">
       <div class="panel-heading">
         <h3 class="panel-title">Please fix: <%= pluralize(@hotel.errors.count, "error") %></h3>
@@ -15,8 +15,8 @@
         </ul>
       </div>
     </div>
-
   <% end %>
+
   <p>
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control input-sm' %>
@@ -37,17 +37,26 @@
     <%= f.text_area :description, class: 'form-control' %>
   </p>
 
+  <% f.fields_for @hotel.location do |location_f| %>
+    <p>
+      <%= location_f.label :address %>
+      <%= location_f.text_field :address, class: 'form-control' %>
+    </p>
+    <p>
+      <%= location_f.label :latitude %>
+      <%= location_f.text_field :latitude, class: 'form-control' %>
+    </p>
+    <p>
+      <%= location_f.label :longitude %>
+      <%= location_f.text_field :longitude, class: 'form-control' %>
+    </p>
+  <% end %>  
+
   <p>
     <%= f.label :photo %>
     <%= f.file_field :photo, class: 'form-control' %>
   </p>
 
-  <% f.fields_for :location do |builder| %>
-    <p>
-      <%= builder.label :address %>
-      <%= builder.text_field :address, class: 'form-control' %>
-    </p>
-  <% end %>  
 
   <p>
     <%= link_to "Cancel", hotels_path, class: 'btn btn-default'  %> 
