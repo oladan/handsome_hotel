@@ -24,37 +24,30 @@
 
   <p>
     <%= f.label :breakfast %>
-
-    <%= f.label :breakfast, "1", class: "radio-inline", :value => '1' do %>
-      <%= f.radio_button :breakfast, "1" %> Yes
-    <% end %>
-
-    <%= f.label :breakfast, "0", class: "radio-inline", :value => '0' do %>
-      <%= f.radio_button :breakfast, "0" %> No
-    <% end %>
+    <%= f.check_box :breakfast, {}, true, false %>
   </p>
 
   <p>
     <%= f.label :star_rating %>
     
     <%= f.label :star_rating, "1", class: "radio-inline", :value => '1' do %>
-      <%= f.radio_button :star_rating, "1" %> 1 star
+      <%= f.radio_button :star_rating, "1" %> *
     <% end %>
     
     <%= f.label :star_rating, "2", class: "radio-inline", :value => '2' do %>
-      <%= f.radio_button :star_rating, "2" %> 2 stars
+      <%= f.radio_button :star_rating, "2" %> **
     <% end %>
     
     <%= f.label :star_rating, "3", class: "radio-inline", :value => '3' do %>
-      <%= f.radio_button :star_rating, "3" %> 3 stars
+      <%= f.radio_button :star_rating, "3" %> ***
     <% end %>
     
     <%= f.label :star_rating, "4", class: "radio-inline", :value => '4' do %>
-      <%= f.radio_button :star_rating, "4" %> 4 stars
+      <%= f.radio_button :star_rating, "4" %> ****
     <% end %>
     
     <%= f.label :star_rating, "5", class: "radio-inline", :value => '5' do %>
-      <%= f.radio_button :star_rating, "5" %> 5 stars
+      <%= f.radio_button :star_rating, "5" %> *****
     <% end %>
   </p>
 

@@ -1,18 +1,19 @@
-<h1><%= @hotel.title %></h1>
-<p align="right">
-  <b>Author:</b> <%= @hotel.user.email %> 
-</p>
+<h1><%= @hotel.title %>
+  <%= "*" * @hotel.star_rating %>
+</h1>
+<%= rating_for @hotel, "hotel_user_rate" %>
 <p style="text-align: justify">
   <%= image_tag(@hotel.photo_url(:thumb), class: "img-rounded pull-left", style: "margin-right: 15px") %>
   <%= @hotel.description %><br>
 </p>
 <p>
-  <b>Breakfast included?</b> <%= @hotel.breakfast ? 'Yes' : 'No' %><br>
-  <b>Stars rating:</b> <%= @hotel.star_rating %><br>
+  <b>Breakfast:</b> <%= @hotel.breakfast ? 'Yes' : 'No' %><br>
   <b>Price:</b> <%= number_to_currency(@hotel.price, :precision => 2) %><br>
-  <b>Address:</b> <%= @hotel.location.address %>
+  <b>Address:</b> <%= @hotel.location.address %><br>
   <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?zoom=16&maptype=hybrid&size=600x300&maptype=roadmap
 &markers=#{@hotel.location.latitude}%2C#{@hotel.location.longitude}" %>
 </p>
- 
+<p align="left">
+  <b>Author:</b> <%= @hotel.user.email %> 
+</p> 
 <%= link_to 'All hotels', hotels_path %>

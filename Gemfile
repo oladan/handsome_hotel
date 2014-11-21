@@ -18,6 +18,8 @@ gem 'country_select'
 gem 'carrierwave'
 gem 'mini_magick', '3.8.0'
 gem 'geocoder'
+gem 'ratyrate'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'sqlite3'

@@ -5,4 +5,5 @@ class Hotel < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
   has_one :location, :dependent => :destroy
   accepts_nested_attributes_for :location
+  ratyrate_rateable "hotel_user_rate"
 end

@@ -19,7 +19,7 @@ class HotelsController < ApplicationController
   end
 
   def index
-    @hotels = Hotel.order('created_at DESC')
+    @hotels = Hotel.paginate(:page => params[:page], :per_page => 5)
   end
 
   private
