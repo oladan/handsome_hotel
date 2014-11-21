@@ -1,0 +1,13 @@
+<h1>Location</h1>
+
+<p id="notice"><%= notice %></p>
+ 
+<p>
+  <b>Address:</b> <%= @location.address %><br>
+  <b>Latitude:</b> <%= @location.latitude %><br>
+  <b>Longitude:</b> <%= @location.latitude %><br>
+  <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?zoom=16&size=600x300&maptype=roadmap
+&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+</p> 
+
+<%= link_to 'Back', locations_path %>

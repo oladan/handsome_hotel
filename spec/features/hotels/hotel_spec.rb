@@ -11,6 +11,7 @@ feature "Hotel pages" do
     visit '/hotels/new'
     expect(page.has_field?('Title')).to eq(true)
     expect(page.has_field?('Photo')).to eq(true)
+    expect(page.has_field?('Address')).to eq(true)
   end
 end
 

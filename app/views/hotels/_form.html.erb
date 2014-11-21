@@ -24,7 +24,39 @@
 
   <p>
     <%= f.label :breakfast %>
-    <%= f.check_box :breakfast %> <br />
+
+    <%= f.label :breakfast, "1", class: "radio-inline", :value => '1' do %>
+      <%= f.radio_button :breakfast, "1" %> Yes
+    <% end %>
+
+    <%= f.label :breakfast, "0", class: "radio-inline", :value => '0' do %>
+      <%= f.radio_button :breakfast, "0" %> No
+    <% end %>
+
+  </p>
+
+  <p>
+    <%= f.label :star_rating %>
+    
+    <%= f.label :star_rating, "1", class: "radio-inline", :value => '1' do %>
+      <%= f.radio_button :star_rating, "1" %> 1 star
+    <% end %>
+    
+    <%= f.label :star_rating, "2", class: "radio-inline", :value => '2' do %>
+      <%= f.radio_button :star_rating, "2" %> 2 stars
+    <% end %>
+    
+    <%= f.label :star_rating, "3", class: "radio-inline", :value => '3' do %>
+      <%= f.radio_button :star_rating, "3" %> 3 stars
+    <% end %>
+    
+    <%= f.label :star_rating, "4", class: "radio-inline", :value => '4' do %>
+      <%= f.radio_button :star_rating, "4" %> 4 stars
+    <% end %>
+    
+    <%= f.label :star_rating, "5", class: "radio-inline", :value => '5' do %>
+      <%= f.radio_button :star_rating, "5" %> 5 stars
+    <% end %>
   </p>
 
   <p>
@@ -37,18 +69,10 @@
     <%= f.text_area :description, class: 'form-control' %>
   </p>
 
-  <% f.fields_for @hotel.location do |location_f| %>
+  <%= f.fields_for @hotel.location do |location_f| %>
     <p>
       <%= location_f.label :address %>
       <%= location_f.text_field :address, class: 'form-control' %>
-    </p>
-    <p>
-      <%= location_f.label :latitude %>
-      <%= location_f.text_field :latitude, class: 'form-control' %>
-    </p>
-    <p>
-      <%= location_f.label :longitude %>
-      <%= location_f.text_field :longitude, class: 'form-control' %>
     </p>
   <% end %>  
 

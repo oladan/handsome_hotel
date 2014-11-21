@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114093834) do
+ActiveRecord::Schema.define(version: 20141120090840) do
+
+  create_table "hotels", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "breakfast"
+    t.decimal  "price",       precision: 10, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "photo"
+    t.integer  "star_rating"
+  end
+
+  add_index "hotels", ["user_id"], name: "index_hotels_on_user_id"
+
+  create_table "locations", force: true do |t|
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "hotel_id"
+  end
+
+  add_index "locations", ["hotel_id"], name: "index_locations_on_hotel_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -29,29 +55,5 @@ ActiveRecord::Schema.define(version: 20141114093834) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
-  create_table "hotels", force: true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.boolean  "breakfast"
-    t.decimal  "price",       precision: 10, scale: 2
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.string   "photo"
-  end
-
-  add_index "hotels", ["user_id"], name: "index_hotels_on_user_id"
-
-  create_table "locations", force: true do |t|
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "hotel_id"
-  end
-
-  add_index "locations", ["hotel_id"], name: "index_locations_on_hotel_id"
 
 end

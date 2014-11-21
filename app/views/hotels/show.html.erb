@@ -3,7 +3,8 @@
 <p>
   <%= image_tag(@hotel.photo_url(:thumb), class: "img-rounded pull-left", style: "margin-right: 15px") %>
   <%= @hotel.description %><br>
-  <b>Breakfast:</b> <%= @hotel.breakfast ? 'Yes' : 'No' %><br>
+  <b>Breakfast included?</b> <%= @hotel.breakfast ? 'Yes' : 'No' %><br>
+  <b>Stars rating:</b> <%= @hotel.star_rating %><br>
   <b>Price:</b> <%= number_to_currency(@hotel.price, :precision => 2) %><br>
   <b>Author:</b> <%= @hotel.user.email %>
 </p>
