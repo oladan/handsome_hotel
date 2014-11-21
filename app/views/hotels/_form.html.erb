@@ -32,7 +32,6 @@
     <%= f.label :breakfast, "0", class: "radio-inline", :value => '0' do %>
       <%= f.radio_button :breakfast, "0" %> No
     <% end %>
-
   </p>
 
   <p>
@@ -69,12 +68,12 @@
     <%= f.text_area :description, class: 'form-control' %>
   </p>
 
-  <%= f.fields_for @hotel.location do |location_f| %>
+  <%= f.fields_for :location do |location_f| %>
     <p>
       <%= location_f.label :address %>
       <%= location_f.text_field :address, class: 'form-control' %>
     </p>
-  <% end %>  
+  <% end %>
 
   <p>
     <%= f.label :photo %>
