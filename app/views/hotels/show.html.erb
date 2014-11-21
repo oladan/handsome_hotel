@@ -11,7 +11,7 @@
   <b>Stars rating:</b> <%= @hotel.star_rating %><br>
   <b>Price:</b> <%= number_to_currency(@hotel.price, :precision => 2) %><br>
   <b>Address:</b> <%= @hotel.location.address %>
-  <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?zoom=16&size=600x300&maptype=roadmap
+  <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?zoom=16&maptype=hybrid&size=600x300&maptype=roadmap
 &markers=#{@hotel.location.latitude}%2C#{@hotel.location.longitude}" %>
 </p>
  
