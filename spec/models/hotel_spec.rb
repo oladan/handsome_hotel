@@ -4,7 +4,8 @@ describe Hotel do
   let(:user) { FactoryGirl.create(:user) }
   before { @hotel = user.hotels.build(title: "Test hotel", 
                                       description: "Lorem ipsum test info", 
-                                      breakfast: true) }
+                                      breakfast: true,
+                                      star_rating: 1) }
   
   subject { @hotel }
   

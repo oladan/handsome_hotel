@@ -19,7 +19,7 @@ class HotelsController < ApplicationController
   end
 
   def index
-    @hotels = Hotel.all
+    @hotels = Hotel.order('created_at DESC')
   end
 
   private
