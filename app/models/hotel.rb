@@ -6,4 +6,5 @@ class Hotel < ActiveRecord::Base
   has_one :location, :dependent => :destroy
   accepts_nested_attributes_for :location
   ratyrate_rateable "hotel_user_rate"
+  has_many :comments
 end

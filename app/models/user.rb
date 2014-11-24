@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :hotels
   ratyrate_rater
+  has_many :comments
 end
